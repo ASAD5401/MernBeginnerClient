@@ -1,0 +1,18 @@
+
+.table-body tr td{
+    width:16.6666%;
+    /* border : 2px red solid; */
+}
+.button-1{
+    float : center;
+    background-color: #404040	;
+    color:white;
+    padding:7px 7px 7px 7px ;
+    border-radius: 15px;
+}
+.button-1:hover{
+    background-color: white;
+    color:#404040
+}
+@media only screen and (max-width:768px) {
+}

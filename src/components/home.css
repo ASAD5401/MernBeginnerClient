@@ -1,0 +1,91 @@
+
+.fa-user,.fa-whatsapp,.fa-facebook-square,.fa-envelope{
+    font-size: 32px !important;
+}
+.footer>h1{
+    font-size: 48px;
+    margin-bottom: 0;
+}
+.maincard{
+    background-color: #FB8C00;
+
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card1,.card2,.card3{
+
+    margin: 20px 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+img{
+    margin-right: 10px;
+}
+@media screen and (max-width:600px){
+    .card1,.card2,.card3{
+        width:100%;
+    }
+    img{
+        width:100%;
+    }
+}
+
+.campuses{
+    background-color: chartreuse;
+}
+
+.card{
+
+    box-shadow: 5px 5px gray;  
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+.lastline{
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    background-color: black;
+    color: blanchedalmond;
+    margin-bottom: 0;
+
+}
+.footer ul{
+    list-style: none;
+    display:inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    margin-right: 38px;
+}
+/* .footercontent{
+    display: flexbox;
+    justify-content: space-around;
+} */
+
+
+@media only screen and (max-width: 600px) {
+    
+.logo{
+    height: 50px;
+    width:50px
+}
+.footer ul{
+    list-style: none;
+    display: unset;
+    vertical-align: top;
+    font-size: 12px;
+    margin-right: 38px;
+}
+
+
+  }
+.collapse{
+    position: absolute;
+    right: 0px;
+}

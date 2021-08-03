@@ -1,0 +1,73 @@
+.whole-part{
+    margin:10% auto;
+}
+.table-body tr td{
+    width:50%
+}
+.table-body tr td input,.marks-body tr td input{
+    /* border:2px red solid; */
+    width:90%;
+    height:40px
+
+}
+.inside-part .inp{
+    margin-left:20px !important ;
+}
+
+@media only screen and (max-width:768px) {
+    .label{
+        display: none !important;
+    }
+    .table-body tr td input,.marks-body tr td input{
+        /* border:2px red solid; */
+        width:275px;
+        /* width:10%; */
+        height:30px
+    
+    }
+}
+
+@media only screen and (max-width:425px) {
+    .label{
+        display: none !important;
+    }
+    .table-body tr td input,.marks-body tr td input{
+        /* border:2px red solid; */
+        width:150px;
+        /* width:10%; */
+        height:30px
+    
+    }
+    .inside-part .inp{
+        margin-left:0px !important ;
+        width:150px
+    }
+}
+@media only screen and (max-width:375px) {
+    .table-body tr td input,.marks-body tr td input{
+        /* border:2px red solid; */
+        width:140px;
+        /* width:10%; */
+        height:30px
+    
+    }
+    .inside-part .inp{
+        margin-left:0px !important ;
+        width:140px
+    }
+}
+@media only screen and (max-width:320px) {
+    .table-body tr td input,.marks-body tr td input{
+        /* border:2px red solid; */
+        width:120px;
+        /* width:10%; */
+        height:30px
+    
+    }
+    .inside-part .inp{
+        margin-left:0px !important ;
+        width:120px
+    }
+    
+
+}
