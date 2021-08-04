@@ -150,10 +150,11 @@
     width:150px;
     color:white;
 
-    font-family: 'Knewave', cursive;;
+    font-family: 'Knewave', cursive;
 }
 .logo span{
-    color:black
+    color:black;
+    font-family: 'Knewave', cursive;
 }
 .nav_button{
     color: rgb(255, 255, 255) !important;
@@ -203,11 +204,13 @@ color:rgb(41, 43, 40) !important
     background: url('https://images.unsplash.com/photo-1570215171323-4ec328f3f5fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: 100vw 80vh;
     background-repeat: no-repeat;
+   
     
 }
 .u_smoky{
     width:100vw !important;
     height: 10vh !important;
+    
 }
 
 .main_content > .l_smoky{
@@ -232,7 +235,7 @@ color:rgb(41, 43, 40) !important
 
 .main_headings{
     color:rgb(151, 150, 150) ;
-    font-family:'Knewave', cursive;;
+    font-family:'Knewave', cursive;
     font-weight: bolder;
     font-size: 48px;
     /* border:2px red solid; */
@@ -241,7 +244,8 @@ color:rgb(41, 43, 40) !important
 }
 
 .main_headings span{
-    color:black
+    color:black;
+    font-family:'Knewave', cursive;
 }
 .para{
     color:rgb(121, 130, 134) !important;

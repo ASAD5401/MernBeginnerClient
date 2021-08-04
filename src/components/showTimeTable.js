@@ -6,30 +6,30 @@ import './showTimeTable.css'
 const ShowTimeTable = () => {
     function removeDuplicates(num) {
         var x,
-            len=num.length,
-            out=[],
-            obj={};
-       
-        for (x=0; x<len; x++) {
-          obj[num[x]]=0;
+            len = num.length,
+            out = [],
+            obj = {};
+
+        for (x = 0; x < len; x++) {
+            obj[num[x]] = 0;
         }
         for (x in obj) {
-          out.push(x);
+            out.push(x);
         }
         return out;
-      }
-      const [tabl, setTabl] = useState([])
+    }
+    const [tabl, setTabl] = useState([])
 
     // const history = useHistory()
     const [userData, setUserData] = useState([])
-    // var [enrolledClass, setEnrolledClass] = useState([])
-    var enrolledclass;
+    var [enrolledclass, setEnrolledClass] = useState([])
+    var enrolledClass;
     const handleEnrolledClass = (e) => {
 
-        enrolledclass = e.target.value;
-        // console.log(enrolledclass)
-        // setEnrolledClass(enrolledclass)
-        callAboutPage(enrolledclass)
+        enrolledClass = e.target.value;
+        console.log(enrolledClass)
+        setEnrolledClass(enrolledClass)
+        callAboutPage(enrolledClass)
     }
 
     const callAboutPage = async (field) => {
@@ -45,14 +45,14 @@ const ShowTimeTable = () => {
             })
             const data = await res.json()
             console.log(data)
-            var result=[]
-            for(let i=0;i<data.length;i++){
+            var result = []
+            for (let i = 0; i < data.length; i++) {
                 result.push(data[i].enrolledclass)
             }
-            var rem_dup= removeDuplicates(result);
+            var rem_dup = removeDuplicates(result);
 
-            
-            
+
+
             setTabl(rem_dup)
             if (!res.status === 200) {
                 const error = new Error(res.error)
@@ -85,11 +85,11 @@ const ShowTimeTable = () => {
         }
     }
 
-    useEffect(() => {
-        callAboutPage()
-        // handleEnrolledClass()
+    // useEffect(() => {
+    //     callAboutPage()
+    //     // handleEnrolledClass()
 
-    }, [])
+    // }, [])
 
 
 
@@ -130,19 +130,19 @@ const ShowTimeTable = () => {
         console.log(table)
     }
     const updateItem = async (e) => {
-        window.location.reload()
+        // window.location.reload()
 
 
         // e.preventDefault();
         const { subject, day, starttime, endtime } = table;
-        console.log(table)
+        console.log(table, enrolledclass)
         const res = await fetch('/timetable/' + e, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                subject, day, starttime, endtime
+                subject, day, starttime, endtime, enrolledclass
             })
         })
         const data = await res.json()
@@ -172,7 +172,7 @@ const ShowTimeTable = () => {
                         <option >Select Field</option>
 
                         {tabl.map((tabl, key) => (
-                            <option key={key}>{tabl}</option>
+                            <option value={tabl} key={key}>{tabl}</option>
                         ))}
                     </select>
                 </div>

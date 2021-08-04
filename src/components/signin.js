@@ -27,10 +27,10 @@ const LogIn = () => {
             window.alert("INVALID REG")
         } else {
             window.alert("LogIn Successfull")
-            localStorage.setItem('userDetails',JSON.stringify({email,password}))
+            localStorage.setItem('userDetails', JSON.stringify({ email, password }))
 
             history.push(
-                 './student'
+                './student'
                 // state: [{ email: email }]
             )
         }
@@ -54,7 +54,7 @@ const LogIn = () => {
             window.alert("INVALID REG")
         } else {
             window.alert("LogIn Successfull")
-            localStorage.setItem('userDetails',JSON.stringify({email,password}))
+            localStorage.setItem('userDetails', JSON.stringify({ email, password }))
 
             history.push('./teacher')
         }
@@ -79,14 +79,15 @@ const LogIn = () => {
         if (res.status === 400 || !data) {
             window.alert("INVALID REG")
         } else {
-            localStorage.setItem('userDetails',JSON.stringify({email,password}))
+            localStorage.setItem('userDetails', JSON.stringify({ email, password }))
 
             window.alert("LogIn Successfull")
             history.push('./admin')
         }
     }
     return (
-        <div className="body">
+        <>
+            {/* <div className="body">
             <section className="signin">
                 <div className="container">
                     <div className="signin-contents">
@@ -119,7 +120,44 @@ const LogIn = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </div> */}
+            <div class="body-register">
+                <div class="container-register">
+                    <div class="title-register">Registration</div>
+                    <div class="content-register">
+                        <form action="#-register">
+                            <div class="user-details-register">
+                                <div class="input-box-register">
+                                    <span class="details-register">Email</span>
+                                    <input type="text" name="email" id="email" autoComplete="off" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email" />
+                                </div>
+                                <div class="input-box-register">
+                                    <span class="details-register">Password</span>
+                                    <input type="password" name="password" id="password" autoComplete="off" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Your Password" />
+                                </div>
+
+                            </div>
+
+                            <div class="button-register">
+                                <input type="submit" name="signin" id="signin" className="form-submit" value="logIn Student" onClick={LogInUser}></input>
+                            </div>
+                            <div class="button-register">
+
+                                <input type="submit" name="signin" id="signin" className="form-submit" value="logIn Teacher" onClick={LogInTeacher}></input>
+                            </div>
+                            <div class="button-register">
+
+                                <input type="submit" name="signin" id="signin" className="form-submit" value="logIn Admin" onClick={LogInAdmin}></input>
+
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </>
     )
 }
 

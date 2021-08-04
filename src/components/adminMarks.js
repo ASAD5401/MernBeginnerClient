@@ -15,20 +15,30 @@ const Marks = () => {
         }
         return out;
       }
-    var [enrolledclass, setEnrolledClass] = useState()
+    // var [enrolledclass, setEnrolledClass] = useState()
     const [course, setCourse] = useState([])
     const [tabl, setTabl] = useState([])
 
 
 
     const [userData, setUserData] = useState([])
-    var enrolledclass;
-    const handleEnrolledClass = (e) => {
-        enrolledclass = e.target.value;
-        callAboutPage(enrolledclass)
-        setEnrolledClass(enrolledclass)
+    var [enrolledclass, setEnrolledClass] = useState([])
 
+    var enrolledClass;
+    const handleEnrolledClass = (e) => {
+
+        enrolledClass = e.target.value;
+        console.log(enrolledClass)
+        setEnrolledClass(enrolledClass)
+        callAboutPage(enrolledClass)
     }
+    // var enrolledclass;
+    // const handleEnrolledClass = (e) => {
+    //     enrolledclass = e.target.value;
+    //     callAboutPage(enrolledclass)
+    //     setEnrolledClass(enrolledclass)
+
+    // }
 
     const callAboutPage = async (field) => {
         try {
@@ -171,8 +181,8 @@ const Marks = () => {
     // console.log(subject)
 
     const handleSubmit = async (event) => {
-        // event.preventDefault();
-        // console.log(subject,totalMarks,mar)
+        event.preventDefault();
+        // console.log(subject,totalMarks,enrolledclass)
 
         var allRec = []
         for (let i = 0; i < Name.length; i++) {
@@ -212,7 +222,7 @@ const Marks = () => {
                             <option >Select Field</option>
 
                             {tabl.map((tabl, key) => (
-                                <option key={key}>{tabl}</option>
+                                <option value={tabl} key={key}>{tabl}</option>
                             ))}
                         </select>
                     </div>
@@ -223,7 +233,7 @@ const Marks = () => {
                             <option >Select Subject</option>
 
                             {course.map((course, key) => (
-                                <option key={key}>{course.subject}</option>
+                                <option  key={key}>{course.subject}</option>
                             ))}
                         </select>
                     </div>

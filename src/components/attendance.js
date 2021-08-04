@@ -20,12 +20,15 @@ const Attendance = () => {
     const [userData, setUserData] = useState([])
     const [table, setTable] = useState([])
     const [course, setCourse] = useState([])
-    var enrolledclass;
+    var [enrolledclass, setEnrolledClass] = useState([])
+    var enrolledClass;
     const handleEnrolledClass = (e) => {
-        enrolledclass = e.target.value;
-        callAboutPage(enrolledclass)
+
+        enrolledClass = e.target.value;
+        console.log(enrolledClass)
+        setEnrolledClass(enrolledClass)
+        callAboutPage(enrolledClass)
     }
-    
     // const array = [1, 2, 3, 2, 3];
     
     // calling the function
@@ -131,8 +134,7 @@ const Attendance = () => {
     // console.log(subject)
 
     const handleSubmit = async (event) => {
-        // event.preventDefault();
-
+        event.preventDefault();
         var allRec = []
         for (let i = 0; i < Name.length; i++) {
             var singRec = {}
@@ -167,10 +169,10 @@ const Attendance = () => {
 
                         <h3 className="h3">Select Field</h3>
                         <select className="select" type="text" name="enrolledclass" id="enrolledclass" autoComplete="off" onChange={handleEnrolledClass} >
-                            <option >Select Field</option>
+                            <option  >Select Field</option>
 
                             {table.map((table, key) => (
-                                <option key={key}>{table}</option>
+                                <option value={table} key={key}>{table}</option>
                             ))}
                         </select>
                     </div>
